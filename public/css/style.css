@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/****** HEADER *******/
+
+.blog-header {
+  background-image: url("../img/fond.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.blog-header div {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 100px 0 0;
+}
+
+.blog-header h1 {
+  text-align: center;
+}
+
+.blog-header h1 a {
+  color: white;
+  font-size: 1.5em;
+}
+
+.blog-header nav {
+  text-align: right;
+  padding: 50px;
+}
+
+.blog-header nav a {
+  color: white;
+  margin: 10px;
+}
+
+/****** MAIN  *******/
+main {
+  padding: 3% 10%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+main p {
+  text-align: center;
+}
+
+main h1 {
+  color: #9b9b9b;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.back {
+  color: #0cd6b4;
+}
+
+.edit {
+  color: #0cd6b4;
+}
+
+.remove {
+  color: red;
+}
+/********** FORM ******/
+
+main form {
+  width: 40%;
+  margin: auto;
+  text-align: center;
+  border: 3px solid #9b9b9b;
+  padding: 25px 50px;
+  border-radius: 15px;
+}
+
+main form label {
+  color: #9b9b9b;
+  text-decoration: underline;
+}
+
+main form input {
+  display: block;
+  margin: 25px auto;
+  width: 70%;
+}
+
+main form textarea {
+  display: block;
+  margin: 25px auto;
+  width: 70%;
+  height: 120px;
+}
+
+main form input[type="submit"] {
+  height: 40px;
+  width: 50%;
+  background-color: #0cd6b4;
+  border: none;
+  border-radius: 5px;
+}
+
+main form select {
+  display: block;
+  margin: 25px auto;
+  width: 70%;
+  text-align: center;
+}
+
+.comment-form {
+  width: 80%;
+}
+
+/********** HOME ****/
+
+.home-list li {
+  text-align: left;
+  list-style: none;
+  margin: 30px 0;
+  padding: 10px 15px;
+  border: solid #eee;
+  border-radius: 8px;
+}
+
+.home-list__title,
+.comments__title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-list li a {
+  display: block;
+  color: #0cd6b4;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+.home-list li p {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.home-list small {
+  color: lightgrey;
+}
+
+/********** ARTICLE ****/
+
+.article-detail {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.article-detail h2 {
+  color: #0cd6b4;
+  margin-bottom: 25px;
+}
+
+.auth {
+  font-size: 0.8em;
+  margin-top: 20px;
+}
+
+.comment-article hr {
+  margin: 25px 0;
+}
+
+.comment-article ul {
+}
+
+.comment-article ul li {
+  list-style: none;
+  padding: 15px;
+}
+
+.comment-article ul li h3 {
+  text-align: left;
+  margin-bottom: 10px;
+  color: #32d37b;
+  font-size: 1.2em;
+}
+
+.comment-article ul li p {
+  text-align: left;
+  font-size: 0.9em;
+}
+.comment-article ul li p .date-comment {
+  text-align: left;
+  font-size: 0.7em;
+}
+
+/********** LOGIN **********/
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 15% auto;
+}
+
+.login form {
+  margin-top: 2em;
+}
+
+/********** ADMIN **********/
+
+table {
+  width: 70%;
+  margin: 50px auto;
+  border-spacing: 0;
+}
+
+table td,
+table th {
+  border: 1px solid #0cd6b4;
+  border-spacing: 0;
+  padding: 15px 25px;
+}
+
+/********** FOOTER *************/
+
+.blog-footer {
+  background-color: #0cd6b4;
+  text-align: center;
+  padding: 25px;
+  width: 100%;
+}

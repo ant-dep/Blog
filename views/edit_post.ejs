@@ -1,0 +1,10 @@
+<h1>Editez un article</h1>
+
+<form action="/edit_post/<%=post.Id%>" method="post">
+  <label>Titre de l'article</label>
+  <input type="text" name="title" value="<%=post.Title%>" />
+  <label>contenu de l'article</label>
+  <textarea name="content"><%=post.Contents%></textarea>
+
+  <input type="submit" name="Enregistrer" />
+</form>

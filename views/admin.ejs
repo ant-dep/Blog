@@ -1,0 +1,101 @@
+<h1>Admin</h1>
+
+<a class="back" href="/add_post">Ajouter un article</a>
+
+<table>
+  <thead>
+    <th>Titre</th>
+    <th>Article</th>
+    <th>Auteur</th>
+    <th>Catégorie</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% for(let i = 0; i < posts.length; i++) { %>
+    <tr>
+      <td>
+        <a class="back" href="/article/<%=posts[i].PostId%>"
+          ><%=posts[i].Title%></a
+        >
+      </td>
+      <td><%=posts[i].Contents.substring(0, 30)%> ...</td>
+      <td><%=posts[i].FirstName%> <%=posts[i].LastName%></td>
+      <td><%=posts[i].Category_Name%></td>
+      <td>
+        <a class="edit" href="edit_post/<%=posts[i].PostId%>"
+          ><i class="fa fa-pencil"></i
+        ></a>
+        <a class="remove" href="delete_post/<%=posts[i].PostId%>"
+          ><i class="fa fa-remove"></i
+        ></a>
+      </td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
+
+<a class="back" href="/add_auth">Ajouter un auteur</a>
+
+<table>
+  <thead>
+    <th>Prénom</th>
+    <th>Nom</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% for(let i = 0; i < authors.length; i++) { %>
+    <tr>
+      <td><%=authors[i].FirstName%></td>
+      <td><%=authors[i].LastName%></td>
+      <td>
+        <a class="edit" href="edit_auth/<%=authors[i].Id%>"
+          ><i class="fa fa-pencil"></i
+        ></a>
+        <a class="remove" href="delete_auth/<%=authors[i].Id%>"
+          ><i class="fa fa-remove"></i
+        ></a>
+      </td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
+
+<a class="back" href="/add_cat">Ajouter une catégorie</a>
+
+<table>
+  <thead>
+    <th>Nom</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% for(let i = 0; i < categories.length; i++) { %>
+    <tr>
+      <td><%=categories[i].Name%></td>
+      <td>
+        <a class="edit" href="edit_cat/<%=categories[i].Id%>"
+          ><i class="fa fa-pencil"></i
+        ></a>
+        <a class="remove" href="delete_cat/<%=categories[i].Id%>"
+          ><i class="fa fa-remove"></i
+        ></a>
+      </td>
+    </tr>
+    <% } %>
+  </tbody>
+</table>
+
+<p id="msg"></p>
+
+<table>
+  <thead>
+    <th>Id</th>
+    <th>Email</th>
+    <th>Prénom</th>
+    <th>Nom</th>
+    <th>Role</th>
+  </thead>
+  <tbody id="user-result"></tbody>
+</table>
+
+<!-- appel de mon fichier js qui va s'occuper de créer un tableau, afficher se tableau et gérer la modification du role de l'utilisateur -->
+<script src="/js/user.js"></script>

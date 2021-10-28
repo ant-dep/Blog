@@ -1,0 +1,21 @@
+<h1>Ajoutez un article</h1>
+
+<form action="/add_post" method="post">
+  <label>Titre de l'article</label>
+  <input type="text" name="title" />
+  <label>contenu de l'article</label>
+  <textarea name="content"></textarea>
+  <select name="author">
+    <% for(let i = 0; i < authors.length; i++) { %>
+    <option value="<%=authors[i].Id%>">
+      <%=authors[i].FirstName%> <%=authors[i].LastName%>
+    </option>
+    <% } %>
+  </select>
+  <select name="category">
+    <% for(let i = 0; i < categories.length; i++) { %>
+    <option value="<%=categories[i].Id%>"><%=categories[i].Name%></option>
+    <% } %>
+  </select>
+  <input type="submit" name="Enregistrer" />
+</form>

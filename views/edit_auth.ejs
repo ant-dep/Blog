@@ -1,0 +1,10 @@
+<h1>Editez un auteur</h1>
+
+<form action="/edit_auth/<%=author.Id%>" method="post">
+  <label>Prénom</label>
+  <input type="text" name="firstName" value="<%=author.FirstName%>" />
+  <label>Nom</label>
+  <input type="text" name="lastName" value="<%=author.LastName%>" />
+
+  <input type="submit" name="Enregistrer" />
+</form>

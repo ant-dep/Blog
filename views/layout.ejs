@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Blog</title>
+
+    <!-- Feuilles de style externes -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <!-- En-tête commune de l'application -->
+    <header class="blog-header">
+      <div>
+        <% if (session.isLogged === false) { %>
+        <h1>
+          <a href="/"><i class="fa fa-microphone"></i> Le Blog </a>
+        </h1>
+        <% } else {%>
+        <h1>
+          <a href="/"
+            ><i class="fa fa-microphone"></i> Le Blog de <%=
+            session.user.firstName %></a
+          >
+        </h1>
+        <% } %>
+        <nav>
+          <a href="/"><i class="fa fa-home"></i>Home</a>
+
+          <% if (session.isLogged === false) { %>
+          <a href="/register"><i class="fa fa-cogs"></i>Register</a>
+          <a href="/login"><i class="fa fa-cogs"></i>Login</a>
+          <% } else {%>
+          <a href="/logout"><i class="fa fa-cogs"></i>Logout</a>
+          <% if (session.isLogged === true && session.user.role === "admin") {
+          %>
+          <a href="/admin"><i class="fa fa-cogs"></i> Administration</a>
+          <% } %> <% } %>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Chargement du template PHTML spécifié par le programme PHP -->
+      <%- include(template) -%>
+    </main>
+
+    <!-- Pied de page commun de l'application -->
+    <footer class="blog-footer">
+      <small>Le blog des élèves de la 3W Academy</small>
+    </footer>
+  </body>
+</html>

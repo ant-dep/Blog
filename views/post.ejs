@@ -1,0 +1,28 @@
+<a class="back" href="/">Retour</a>
+<section class="article-detail">
+  <h2><%=post.Title%></h2>
+  <p><%=post.Contents%></p>
+  <p class="auth">par : <%=post.FirstName%> <%=post.LastName%></p>
+</section>
+<section class="comment-article">
+  <hr />
+  <ul>
+    <%for(let i = 0; i < comments.length; i++) {%>
+    <li>
+      <h3><%=comments[i].NickName%></h3>
+      <p><%=comments[i].Contents%></p>
+      <p class="date-comment">
+        <%=new Date(comments[i].CreationTimestamp).toLocaleDateString()%>
+      </p>
+    </li>
+    <%}%>
+  </ul>
+  <hr />
+</section>
+<form class="comment-form" action="/add_comment/<%=post.Id%>" method="post">
+  <label>Pseudo</label>
+  <input type="text" name="nickName" />
+  <label>commentaire</label>
+  <textarea name="content"></textarea>
+  <input type="submit" name="Enregistrer" />
+</form>

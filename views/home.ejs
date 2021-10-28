@@ -1,0 +1,15 @@
+<p>
+  Bienvenu sur mon blog, vous trouverez ici tous mes articles de kikou lol !!!!
+</p>
+<ul class="home-list">
+  <% for(let i=0; i < posts.length; i++) {%>
+  <li>
+    <div class="home-list__title">
+      <a href="/Post/<%= posts[i].Id %>"><h2><%= posts[i].Title %></h2></a>
+      <small><%= posts[i].CreationTimestamp.toLocaleDateString() %></small>
+    </div>
+    <small>Par <%= posts[i].FirstName %></small>
+    <p><%= posts[i].Contents.substring(0, 55) %><small> ...</small></p>
+  </li>
+  <% } %>
+</ul>
