@@ -82,10 +82,10 @@ const adminRoutes = require("./routes/adminRoutes");
 // connexion BDD
 mysql
   .createConnection({
-    host: "db.3wa.io", // on rentre l'hôte l'adresse url où se trouve la bdd
-    user: "antoinedepertat", // identifiant BDD
-    password: "36317e1f9bfc8b2db04bf42ad6f026a8", // le password
-    database: "antoinedepertat_blog", // nom de la base de donnée
+    host: "host", // on rentre l'hôte l'adresse url où se trouve la bdd
+    user: "user", // identifiant BDD
+    password: "password", // le password
+    database: "db", // nom de la base de donnée
   })
   .then((db) => {
     console.log("connecté à la database");
